@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: attention-visualizer-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: >-
+      python -m pip install --upgrade pip &&
+      python -m pip install "torch==2.13.0+cpu" --index-url https://download.pytorch.org/whl/cpu &&
+      python -m pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: PRETRAINED_DEVICE
+        value: cpu
+      - key: TOKENIZERS_PARALLELISM
+        value: "false"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PIP_NO_CACHE_DIR
+        value: "1"

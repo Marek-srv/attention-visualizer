@@ -1,0 +1,22 @@
+@import "katex/dist/katex.min.css";
+
+* { box-sizing: border-box; }
+html { min-width: 320px; background: var(--bg-0); scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--text); background:
+  radial-gradient(circle at 12% -10%, rgba(49, 177, 119, 0.2), transparent 32rem),
+  radial-gradient(circle at 88% 12%, rgba(82, 199, 217, 0.08), transparent 28rem),
+  var(--bg-0); font-family: var(--font-sans); }
+button, input, select, textarea { font: inherit; }
+button, select, input, textarea, a { outline: none; }
+button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible, [tabindex]:focus-visible { box-shadow: 0 0 0 3px rgba(248, 217, 137, 0.42); }
+button { border: 0; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.48; }
+a { color: inherit; }
+svg { display: block; max-width: 100%; }
+table { border-collapse: separate; border-spacing: 0; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.skip-link { position: fixed; z-index: 1000; top: 8px; left: 8px; padding: 10px 14px; border-radius: var(--radius-sm); color: var(--bg-0); background: var(--mint); font-weight: 800; text-decoration: none; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.step-label, .eyebrow { margin: 0; color: var(--mint); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.numeric, .matrix-table, .tensor-table, .vector-cell { font-variant-numeric: tabular-nums; }
+

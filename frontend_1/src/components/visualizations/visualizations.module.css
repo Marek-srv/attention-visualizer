@@ -1,0 +1,357 @@
+.formula {
+  min-width: 0;
+  overflow-x: auto;
+  color: var(--text-strong, #eef8f3);
+  font-size: clamp(0.86rem, 1.3vw, 1.05rem);
+}
+
+.vectorRow {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 0.8fr) minmax(0, 3fr);
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vectorRow > strong {
+  color: var(--text-muted, #9cb7ac);
+  font-size: 0.82rem;
+}
+
+.vectorCells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4.7rem, 1fr));
+  gap: 0.3rem;
+}
+
+.vectorCell,
+.matrixCell {
+  min-height: 2.7rem;
+  border: 1px solid color-mix(in srgb, var(--flow, #6de2ac), transparent 70%);
+  border-radius: 0.42rem;
+  color: #f4fbf8;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.vectorCell small,
+.matrixCell small {
+  display: block;
+  color: #d3e9df;
+  font-size: 0.68rem;
+}
+
+.vectorCell span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+}
+
+.vectorCell[data-selected="true"],
+.matrixCell[data-selected="true"] {
+  outline: 2px solid var(--prediction, #f3c66f);
+  outline-offset: 2px;
+}
+
+.matrixRegion {
+  min-width: 0;
+}
+
+.matrixRegion[data-compact="true"] .matrixCell {
+  min-width: 3.6rem;
+  min-height: 2.2rem;
+  font-size: 0.7rem;
+}
+
+.matrixScroll {
+  max-width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.matrix,
+.numericTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.matrix caption,
+.numericTable caption {
+  padding: 0 0 0.6rem;
+  color: var(--text-strong, #eef8f3);
+  font-weight: 700;
+  text-align: left;
+}
+
+.matrix th,
+.numericTable th {
+  color: var(--text-muted, #9cb7ac);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.matrixCell {
+  width: 100%;
+  min-width: 4.7rem;
+  padding: 0.35rem;
+  background: #153029;
+  font-size: 0.75rem;
+}
+
+.matrixCell[data-masked="true"] {
+  border-color: #70817a;
+  color: #d9e0dd;
+  background: repeating-linear-gradient(135deg, #25322f 0 5px, #18231f 5px 10px);
+}
+
+.rowSum {
+  padding-inline: 0.5rem;
+  color: var(--text-strong, #eef8f3);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.rowSum small {
+  display: block;
+  color: var(--text-muted, #9cb7ac);
+}
+
+.rowSum[data-valid="true"] small {
+  color: var(--positive, #6de2ac);
+}
+
+.numericTable td {
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--flow, #6de2ac), transparent 82%);
+  border-radius: 0.3rem;
+  color: var(--text, #dcebe5);
+  background: #10231e;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.embeddingTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.embeddingTable caption {
+  padding-bottom: 0.5rem;
+  color: var(--text-strong, #eef8f3);
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-align: left;
+}
+
+.embeddingTable th,
+.embeddingTable td {
+  padding: 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--flow, #6de2ac), transparent 84%);
+  border-radius: 0.3rem;
+  color: var(--text, #dcebe5);
+  background: #10231e;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.embeddingTable thead th {
+  color: var(--text-muted, #9cb7ac);
+  background: transparent;
+}
+
+.embeddingTable tbody tr[data-selected="true"] th,
+.embeddingTable tbody tr[data-selected="true"] td {
+  border-color: var(--prediction, #f3c66f);
+  background: color-mix(in srgb, var(--prediction, #f3c66f), transparent 90%);
+}
+
+.embeddingTable button {
+  width: 100%;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-weight: 750;
+}
+
+div.vectorCell,
+div.matrixCell {
+  cursor: default;
+}
+
+.numericTable td[data-highlighted="true"] {
+  border-color: var(--prediction, #f3c66f);
+  background: color-mix(in srgb, var(--prediction, #f3c66f), transparent 84%);
+}
+
+.legend {
+  margin: 0.55rem 0 0;
+  color: var(--text-muted, #9cb7ac);
+  font-size: 0.72rem;
+}
+
+.arcRegion svg {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+}
+
+.arcControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.arcControls button,
+.arcControls > span {
+  border: 1px solid color-mix(in srgb, var(--flow, #6de2ac), transparent 66%);
+  border-radius: 999px;
+  padding: 0.35rem 0.58rem;
+  color: var(--text, #dcebe5);
+  background: #10231e;
+  font: inherit;
+  font-size: 0.74rem;
+}
+
+.arcControls > span {
+  display: inline-flex;
+}
+
+.arcControls button[aria-pressed="true"] {
+  border-color: var(--prediction, #f3c66f);
+}
+
+.arcControls button:disabled {
+  color: #9aa8a2;
+  background: repeating-linear-gradient(135deg, #25322f 0 5px, #18231f 5px 10px);
+}
+
+.arcControls > span[data-masked="true"] {
+  color: #9aa8a2;
+  background: repeating-linear-gradient(135deg, #25322f 0 5px, #18231f 5px 10px);
+}
+
+.ffnNetwork {
+  min-width: 0;
+  padding: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--flow, #6de2ac), transparent 82%);
+  border-radius: 0.65rem;
+  background: #0a1814;
+}
+
+.networkHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.networkHeading span {
+  color: var(--flow, #6de2ac);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.networkHeading h3 {
+  margin: 0.15rem 0 0;
+  color: var(--text-strong, #eef8f3);
+  font-size: 0.86rem;
+}
+
+.networkHeading p {
+  max-width: 23rem;
+  margin: 0;
+  color: var(--text-muted, #9cb7ac);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.ffnNetwork svg {
+  display: block;
+  width: 100%;
+  min-width: 35rem;
+  overflow: visible;
+}
+
+.ffnNetwork > svg text {
+  fill: #eef8f3;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ffnNetwork > svg .networkLabel {
+  fill: #94aea2;
+  font-size: 9px;
+}
+
+.ffnNetwork > svg .networkState {
+  fill: #adbbb5;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.networkLinks line {
+  stroke: #416f5e;
+  stroke-width: 1;
+  opacity: 0.25;
+}
+
+.neuronControls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.2rem, 1fr));
+  gap: 0.35rem;
+}
+
+.neuronControls button {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.42rem;
+  border: 1px solid color-mix(in srgb, var(--value, #ad8cf5), transparent 65%);
+  border-radius: 0.4rem;
+  color: var(--text, #dcebe5);
+  background: #11251f;
+  font: inherit;
+  font-size: 0.66rem;
+  text-align: left;
+}
+
+.neuronControls button[aria-pressed="true"] {
+  border-color: var(--prediction, #f3c66f);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--prediction, #f3c66f), transparent 82%);
+}
+
+.neuronControls span {
+  color: var(--text-muted, #9cb7ac);
+  font-variant-numeric: tabular-nums;
+}
+
+.neuronControls em {
+  color: var(--key, #e9b56b);
+  font-style: normal;
+  font-weight: 750;
+}
+
+@media (max-width: 680px) {
+  .vectorRow {
+    grid-template-columns: 1fr;
+  }
+
+  .matrixCell {
+    min-width: 4.1rem;
+  }
+
+  .networkHeading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ffnNetwork {
+    overflow-x: auto;
+  }
+}

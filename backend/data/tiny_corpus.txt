@@ -1,0 +1,149 @@
+I love you
+I love music
+I love coding
+I love artificial intelligence
+I love learning
+I love transformers
+I enjoy learning transformers
+I enjoy learning coding
+I enjoy learning attention
+I enjoy learning language models
+I like music
+I like coding
+I like transformers
+I like artificial intelligence
+I study attention
+I study transformers
+I study language models
+I study token embeddings
+we love music
+we love coding
+we love learning
+we love transformers
+we enjoy music
+we enjoy coding
+we enjoy learning together
+we study attention together
+you love music
+you love coding
+you enjoy learning
+you study transformers
+students love coding
+students love learning
+students enjoy transformers
+students study attention
+teachers explain attention
+teachers explain transformers
+teachers explain token embeddings
+teachers explain language models
+attention connects related tokens
+attention connects words in context
+attention reads earlier tokens
+attention follows the causal mask
+causal attention hides future tokens
+causal attention reads past tokens
+causal masks protect the future
+causal masks guide attention
+transformers process sequences
+transformers process tokens
+transformers learn patterns
+transformers use attention
+transformers use token embeddings
+transformers use position embeddings
+token embeddings represent words
+token embeddings represent symbols
+position embeddings represent order
+position embeddings mark token positions
+embeddings carry useful features
+embeddings combine token and position information
+queries ask what to find
+keys describe available information
+values carry information forward
+attention scores compare queries and keys
+softmax turns scores into probabilities
+attention probabilities weight values
+multiple heads read different patterns
+each head reads a smaller representation
+residual connections preserve information
+layer normalization stabilizes features
+feed forward networks transform each token
+GELU keeps the network smooth
+decoder blocks predict the next token
+language models predict likely continuations
+language models learn from examples
+training compares predictions with targets
+training reduces cross entropy loss
+validation checks learned patterns
+checkpoints save trained weights
+checkpoints preserve the vocabulary
+the model reads one token at a time
+the model never reads future tokens
+the model predicts music after love
+the model predicts coding after love
+the model predicts you after love
+I love you .
+I love music .
+I love coding .
+I love artificial intelligence .
+I enjoy learning transformers .
+attention connects related tokens .
+transformers process sequences .
+we enjoy learning together .
+queries ask what to find .
+keys describe available information .
+values carry information forward .
+token order matters
+word order changes meaning
+context helps predict words
+practice helps models learn
+small models teach big ideas
+tiny examples make calculations visible
+the visualizer shows attention patterns
+attention patterns show where heads read
+attention is not a complete explanation
+predictions are model probabilities
+model probabilities are not factual confidence
+I love you !
+I love music !
+I love coding !
+we love learning !
+students enjoy coding !
+transformers are interesting
+attention is useful
+learning is enjoyable
+coding is creative
+music is inspiring
+I love creative coding
+I love inspiring music
+I enjoy careful experiments
+we inspect every layer
+we inspect every head
+we inspect causal attention
+we test deterministic generation
+we save the best checkpoint
+we load the best checkpoint
+we predict the next token
+we generate a short sequence
+the tiny model trains locally
+the tiny model runs on a CPU
+the tiny model can use CUDA
+the vocabulary is deterministic
+unknown words use the unknown token
+every sequence starts with a beginning token
+every sequence ends with an ending token
+padding completes a training batch
+padding does not affect the loss
+gradients update model weights
+AdamW optimizes model weights
+gradient clipping keeps updates stable
+the training seed makes runs repeatable
+the loss becomes finite
+the model learns simple continuations
+I love
+I love you
+I love music
+I love coding
+I love artificial intelligence
+I enjoy learning transformers
+attention connects related tokens
+transformers process sequences
