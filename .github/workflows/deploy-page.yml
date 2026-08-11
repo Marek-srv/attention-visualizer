@@ -1,0 +1,104 @@
+name: Deploy both frontends
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # -----------------------
+      # FRONTEND
+      # -----------------------
+      - name: Install frontend
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build -- --base=/attention-visualizer/frontend/
+
+      # -----------------------
+      # FRONTEND_1
+      # -----------------------
+      - name: Install frontend_1
+        working-directory: frontend_1
+        run: npm ci
+
+      - name: Build frontend_1
+        working-directory: frontend_1
+        run: npm run build -- --base=/attention-visualizer/frontend_1/
+
+      # -----------------------
+      # COMBINE BOTH
+      # -----------------------
+      - name: Create GitHub Pages site
+        run: |
+          mkdir -p site/frontend
+          mkdir -p site/frontend_1
+
+          cp -r frontend/dist/. site/frontend/
+          cp -r frontend_1/dist/. site/frontend_1/
+
+          cat > site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Attention Visualizer</title>
+          </head>
+          <body>
+            <h1>Attention Visualizer</h1>
+
+            <p>
+              <a href="./frontend/">Open Frontend</a>
+            </p>
+
+            <p>
+              <a href="./frontend_1/">Open Frontend 1</a>
+            </p>
+          </body>
+          </html>
+          EOF
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
